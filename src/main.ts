@@ -18,7 +18,7 @@ async function bootstrap() {
   
   
   app.enableCors({
-    origin: ['http://localhost:3000', 'https://bejerabu.beget.app'],
+    origin: ['http://localhost:3000', 'https://bejerabu.beget.app', 'https://jukirililuk.beget.app'],
     credentials: true,
   });
   
