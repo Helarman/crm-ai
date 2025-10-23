@@ -34,7 +34,7 @@ export class OpenaiController {
   // Обработка preflight OPTIONS запросов
   @Options()
   handleOptions(@Res() res: Response) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Origin', 'https://bejerabu.beget.app');
     res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
     res.status(200).send();
@@ -88,12 +88,12 @@ export class OpenaiController {
         authHeader,
       );
       
-      res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+      res.header('Access-Control-Allow-Origin', 'https://bejerabu.beget.app');
       res.header('Access-Control-Allow-Credentials', 'true');
       res.status(200).json(result);
     } catch (error) {
       console.error('Audio transcription error:', error);
-      res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+      res.header('Access-Control-Allow-Origin', 'https://bejerabu.beget.app');
       res.header('Access-Control-Allow-Credentials', 'true');
       res.status(error.response?.status || 500).json({
         error: error.message,
@@ -121,12 +121,12 @@ export class OpenaiController {
         authHeader,
       );
       
-      res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+      res.header('Access-Control-Allow-Origin', 'https://bejerabu.beget.app');
       res.header('Access-Control-Allow-Credentials', 'true');
       res.status(200).json(result);
     } catch (error) {
       console.error('Chat completion error:', error);
-      res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+      res.header('Access-Control-Allow-Origin', 'https://bejerabu.beget.app');
       res.header('Access-Control-Allow-Credentials', 'true');
       res.status(error.response?.status || 500).json({
         error: error.message,
@@ -152,13 +152,13 @@ export class OpenaiController {
         authHeader,
       );
       
-      res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+      res.header('Access-Control-Allow-Origin', 'https://bejerabu.beget.app');
       res.header('Access-Control-Allow-Credentials', 'true');
       res.setHeader('Content-Type', 'audio/mpeg');
       res.send(result);
     } catch (error) {
       console.error('TTS error:', error);
-      res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+      res.header('Access-Control-Allow-Origin', 'https://bejerabu.beget.app');
       res.header('Access-Control-Allow-Credentials', 'true');
       res.status(error.response?.status || 500).json({
         error: error.message,
